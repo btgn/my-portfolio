@@ -1,12 +1,16 @@
-import React from "react";
-import "./App.css";
+import ThemeProvider from 'assets/theme/ThemeProvider';
+import router from 'Router';
+import { useRoutes } from 'react-router-dom';
+import { CssBaseline, Typography } from '@mui/material';
 
-function App() {
-	return (
-		<div className="App">
-			<header className="App-header">Welcome to my portfolio</header>
-		</div>
-	);
-}
+const App = () => {
+  const content = useRoutes(router);
+  return (
+    <ThemeProvider>
+      <CssBaseline />
+      {content}
+    </ThemeProvider>
+  );
+};
 
 export default App;
