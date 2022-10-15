@@ -4,8 +4,6 @@ import { Theme } from '@mui/material';
 import { LightTheme } from './schemes/LightTheme';
 import { DarkTheme } from './schemes/DarkTheme';
 
-const themeMap: { [key: string]: Theme } = { LightTheme, DarkTheme };
-
 export const themeCreator = (theme: string): Theme => {
   return themeMap[theme];
 };
@@ -250,3 +248,5 @@ declare module '@mui/material/styles' {
     };
   }
 }
+
+const themeMap: { [key: string]: Theme } = { LightTheme, DarkTheme };

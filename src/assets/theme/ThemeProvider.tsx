@@ -1,16 +1,14 @@
-import { ThemeProvider } from '@emotion/react';
+import { ThemeProvider } from '@mui/material';
 import React, { useState } from 'react';
+import { ChildrenProps } from 'types/types';
 import { themeCreator } from './types';
+import { StylesProvider } from '@mui/styles';
 
 export const ThemeContext = React.createContext(
   (themeName: string): void => {},
 );
 
-interface Props {
-  children: React.ReactNode;
-}
-
-const ThemeProviderWrapper: React.FC<Props> = ({ children }) => {
+const ThemeProviderWrapper: React.FC<ChildrenProps> = ({ children }) => {
   const curThemeName = localStorage.getItem('appTheme') || 'LightTheme';
   const [themeName, _setThemeName] = useState(curThemeName);
   const theme = themeCreator(themeName);
@@ -20,9 +18,11 @@ const ThemeProviderWrapper: React.FC<Props> = ({ children }) => {
   };
 
   return (
-    <ThemeContext.Provider value={setThemeName}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
-    </ThemeContext.Provider>
+    <StylesProvider>
+      <ThemeContext.Provider value={setThemeName}>
+        <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      </ThemeContext.Provider>
+    </StylesProvider>
   );
 };
 
