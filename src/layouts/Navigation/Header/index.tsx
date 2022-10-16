@@ -14,25 +14,9 @@ import {
 import MenuTwoToneIcon from '@mui/icons-material/MenuTwoTone';
 import { SidebarContext } from 'contexts/SidebarContext';
 import CloseTwoToneIcon from '@mui/icons-material/CloseTwoTone';
-
-const HeaderWrapper = styled(Box)(
-  ({ theme }) => `
-        height: ${theme.header.height};
-        color: ${theme.header.textColor};
-        padding: ${theme.spacing(0, 2)};
-        right: 0;
-        z-index: 6;
-        background-color: ${alpha(theme.header.background, 0.95)};
-        backdrop-filter: blur(3px);
-        position: fixed;
-        justify-content: space-between;
-        width: 100%;
-        @media (min-width: ${theme.breakpoints.values.lg}px) {
-            left: ${theme.sidebar.width};
-            width: auto;
-        }
-`,
-);
+import HeaderMenu from './Menu';
+import { HeaderWrapper } from 'StyledComponents';
+import UniversalSearch from 'components/UniversalSearch';
 
 const Header = () => {
   const { sidebarToggle, toggleSidebar } = useContext(SidebarContext);
@@ -76,14 +60,18 @@ const Header = () => {
             </IconButton>
           </Tooltip>
         </Box>
-        Header Component
+        <HeaderMenu />
       </Box>
       <Stack
         direction="row"
         divider={<Divider orientation="vertical" flexItem />}
         alignItems="center"
         spacing={2}
-      ></Stack>
+      >
+        <Box sx={{ mr: 1 }}>
+          <UniversalSearch />
+        </Box>
+      </Stack>
     </HeaderWrapper>
   );
 };

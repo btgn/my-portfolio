@@ -3,12 +3,10 @@ import { FC } from 'react';
 import { Outlet } from 'react-router-dom';
 import { ChildrenProps } from 'types/types';
 import Header from './Header';
-import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 
 const Navigation: FC<ChildrenProps> = () => {
   const theme = useTheme();
-
-  console.log('first', theme.colors);
 
   return (
     <>
@@ -39,7 +37,7 @@ const Navigation: FC<ChildrenProps> = () => {
         }}
       >
         <Header />
-        <Sidebar />
+        <Navbar />
         <Box
           sx={{
             position: 'relative',
