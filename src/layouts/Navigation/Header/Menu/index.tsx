@@ -9,7 +9,7 @@ import {
 import { useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import ExpandMoreTwoToneIcon from '@mui/icons-material/ExpandMoreTwoTone';
-import { ListWrapper } from 'StyledComponents';
+import { HeaderListWrapper } from 'StyledComponents';
 
 const HeaderMenu = () => {
   const ref = useRef<any>(null);
@@ -25,7 +25,7 @@ const HeaderMenu = () => {
 
   return (
     <>
-      <ListWrapper
+      <HeaderListWrapper
         sx={{
           display: {
             xs: 'none',
@@ -75,7 +75,7 @@ const HeaderMenu = () => {
             />
           </ListItem>
         </List>
-      </ListWrapper>
+      </HeaderListWrapper>
       <Menu anchorEl={ref.current} onClose={handleClose} open={isOpen}>
         <MenuItem sx={{ px: 3 }} component={NavLink} to="/overview">
           Overview

@@ -41,6 +41,8 @@ const Navigation: FC<ChildrenProps> = () => {
         <Box
           sx={{
             position: 'relative',
+            marginTop: '15px',
+            padding: '10px',
             zIndex: 5,
             display: 'block',
             flex: 1,

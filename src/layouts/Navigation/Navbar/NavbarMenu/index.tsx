@@ -12,9 +12,7 @@ import {
 import { NavLink as RouterLink } from 'react-router-dom';
 import { SidebarContext } from 'contexts/SidebarContext';
 
-import DesignServicesTwoToneIcon from '@mui/icons-material/DesignServicesTwoTone';
 import BrightnessLowTwoToneIcon from '@mui/icons-material/BrightnessLowTwoTone';
-import MmsTwoToneIcon from '@mui/icons-material/MmsTwoTone';
 import TableChartTwoToneIcon from '@mui/icons-material/TableChartTwoTone';
 import CheckBoxTwoToneIcon from '@mui/icons-material/CheckBoxTwoTone';
 import ChromeReaderModeTwoToneIcon from '@mui/icons-material/ChromeReaderModeTwoTone';
@@ -84,12 +82,10 @@ const SubMenuWrapper = styled(Box)(
           .MuiButton-startIcon {
             color: ${theme.colors.alpha.trueWhite[30]};
             font-size: ${theme.typography.pxToRem(20)};
-            margin-right: ${theme.spacing(1)};
           }
           
           .MuiButton-endIcon {
             color: ${theme.colors.alpha.trueWhite[50]};
-            margin-left: auto;
             opacity: .8;
             font-size: ${theme.typography.pxToRem(20)};
           }
@@ -220,7 +216,7 @@ const NavbarMenu = () => {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/coming-soon"
+                  to="coming-soon"
                   startIcon={<TableChartTwoToneIcon />}
                 >
                   Dogs List
@@ -231,7 +227,7 @@ const NavbarMenu = () => {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/coming-soon"
+                  to="coming-soon"
                   startIcon={<TableChartTwoToneIcon />}
                 >
                   Cats List
@@ -255,7 +251,7 @@ const NavbarMenu = () => {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/404"
+                  to="/error/404"
                   startIcon={<CheckBoxTwoToneIcon />}
                 >
                   Error 404
@@ -266,7 +262,7 @@ const NavbarMenu = () => {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/500"
+                  to="/error/500"
                   startIcon={<CameraFrontTwoToneIcon />}
                 >
                   Error 500
@@ -277,7 +273,7 @@ const NavbarMenu = () => {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/coming-soon"
+                  to="/error/coming-soon"
                   startIcon={<ChromeReaderModeTwoToneIcon />}
                 >
                   Coming Soon
@@ -288,7 +284,7 @@ const NavbarMenu = () => {
                   disableRipple
                   component={RouterLink}
                   onClick={closeSidebar}
-                  to="/status/maintenance"
+                  to="/error/maintenance"
                   startIcon={<WorkspacePremiumTwoToneIcon />}
                 >
                   Maintenance

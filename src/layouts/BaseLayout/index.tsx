@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 import { ChildrenProps } from 'types/types';
 
 const BaseLayout: FC<ChildrenProps> = ({ children }) => {
-  return <Box sx={{ flex: 1, height: '100%' }}>{children || <Outlet />}</Box>;
+  return <Box sx={{ flex: 1, height: '100%', padding: '10px' }}>{children || <Outlet />}</Box>;
 };
 
 BaseLayout.propTypes = {

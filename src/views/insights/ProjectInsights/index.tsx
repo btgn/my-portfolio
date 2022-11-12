@@ -64,7 +64,7 @@ const ProjectInsights = () => {
           </TypographyH4>
           <Button
             component={RouterLink}
-            to="/projects/aboutme"
+            to="/portfolio/aboutme"
             size="large"
             variant="contained"
           >
