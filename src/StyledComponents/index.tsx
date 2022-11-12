@@ -1,13 +1,17 @@
 import {
   alpha,
   Box,
+  Button,
   Dialog,
   DialogTitle,
+  OutlinedInput,
   styled,
   TextField,
+  Typography,
 } from '@mui/material';
 
-const ListWrapper = styled(Box)(
+// Header Wrappers || Header*
+const HeaderListWrapper = styled(Box)(
   ({ theme }) => `
         .MuiTouchRipple-root {
             display: none;
@@ -77,7 +81,8 @@ const HeaderWrapper = styled(Box)(
 `,
 );
 
-const DialogWrapper = styled(Dialog)(
+// UniversalSearch Wrappers || US*
+const USDialogWrapper = styled(Dialog)(
   () => `
     .MuiDialog-container {
         height: auto;
@@ -89,7 +94,7 @@ const DialogWrapper = styled(Dialog)(
 `,
 );
 
-const SearchInputWrapper = styled(TextField)(
+const USSearchInputWrapper = styled(TextField)(
   ({ theme }) => `
     background: ${theme.colors.alpha.white[100]};
 
@@ -99,17 +104,67 @@ const SearchInputWrapper = styled(TextField)(
 `,
 );
 
-const DialogTitleWrapper = styled(DialogTitle)(
+const USDialogTitleWrapper = styled(DialogTitle)(
   ({ theme }) => `
     background: ${theme.colors.alpha.black[5]};
     padding: ${theme.spacing(3)}
 `,
 );
 
+// Coming Soon Wrappers || CS*
+const CSMainContent = styled(Box)(
+  () => `
+    height: 100%;
+    display: flex;
+    flex: 1;
+    overflow: auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+`,
+);
+
+const CSHeading1 = styled(Typography)(
+  ({ theme }) => `
+  font-size: ${theme.typography.pxToRem(75)};
+`,
+);
+
+const CSHeading3 = styled(Typography)(
+  ({ theme }) => `
+  color: ${theme.colors.alpha.black[50]};
+`,
+);
+
+const CSOutlinedInputWrapper = styled(OutlinedInput)(
+  ({ theme }) => `
+    background-color: ${theme.colors.alpha.white[100]};
+`,
+);
+
+const CSNotifyButton = styled(Button)(
+  ({ theme }) => `
+    margin-right: -${theme.spacing(1)};
+`,
+);
+
+// Page Not Found Wrapper || PNF
+const PNFButtonSearch = styled(Button)(
+  ({ theme }) => `
+    margin-right: -${theme.spacing(1)};
+`,
+);
+
 export {
-  ListWrapper,
+  HeaderListWrapper,
   HeaderWrapper,
-  DialogWrapper,
-  SearchInputWrapper,
-  DialogTitleWrapper,
+  USDialogWrapper,
+  USSearchInputWrapper,
+  USDialogTitleWrapper,
+  CSMainContent,
+  CSHeading1,
+  CSHeading3,
+  CSOutlinedInputWrapper,
+  CSNotifyButton,
+  PNFButtonSearch,
 };
